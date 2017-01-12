@@ -152,6 +152,35 @@
                     <target>1.5</target>
                 </configuration>
             </plugin>
+<!--jar包分开打 begin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>aaa</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <excludeScope>provided</excludeScope>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--jar包分开打 end -->
+
+            <!--jar包打到一起begin -->
+            <!--
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.4</version>
@@ -170,6 +199,8 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
+            <!--jar包打到一起end -->
         </plugins>
     </build>
 </project>
