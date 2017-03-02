@@ -1,5 +1,11 @@
 package com.maming.spark.temple.examples;
 
+import com.cloudera.sparkts.models.ARIMA;
+import com.cloudera.sparkts.models.ARIMAModel;
+import org.apache.spark.mllib.linalg.Vector;
+import org.apache.spark.mllib.linalg.Vectors;
+import org.apache.spark.mllib.linalg.Vectors$;
+
 import javax.servlet.ServletRegistration;
 
 /**
@@ -18,5 +24,6 @@ public class Test {
             path = path.substring("jar:file:".length(), path.indexOf('!'));
         }
         System.out.println(path);
+
     }
 }

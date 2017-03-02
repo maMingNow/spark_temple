@@ -14,8 +14,21 @@
         <spark-versioin>1.6.1</spark-versioin>
         <log4j-versioin>2.0.2</log4j-versioin>
         <scala-versioin>2.10.5</scala-versioin>
-        <scala.version>2.10.5</scala.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-Tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+        <repository>
+            <id>cloudera-repos</id>
+            <name>Cloudera Repos</name>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+
+    </repositories>
 
     <dependencies>
         <!--
@@ -46,17 +59,24 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.2</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>2.0.35-beta</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -137,13 +157,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_2.10</artifactId>
-            <version>${spark-versioin}</version>
-            <scope>${provided_scope}</scope>
-        </dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-mllib_2.10</artifactId>
+        <version>${spark-versioin}</version>
+        <scope>${provided_scope}</scope>
+    </dependency>
 
-<!--使用该包算法-->
+        <!--使用该包算法-->
         <dependency>
             <groupId>com.cloudera.sparkts</groupId>
             <artifactId>sparkts</artifactId>
@@ -167,27 +187,27 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-compiler</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala-versioin}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-reflect</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala-versioin}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>jline</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala-versioin}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-actors</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala-versioin}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scalap</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala-versioin}</version>
         </dependency>
 
         <dependency>

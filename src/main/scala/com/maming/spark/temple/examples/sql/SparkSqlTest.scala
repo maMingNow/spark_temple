@@ -53,7 +53,7 @@ object SparkSqlTest {
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._
 
-    val hdfsPath = "hdfs://namenode01.yinker.com:8020/log/spark/sql/demo1/*.txt";
+    val hdfsPath = "hdfs://namenode01.xxxx.com:8020/log/spark/sql/demo1/*.txt";
     val customer = sc.textFile(hdfsPath).map(_.split(","))
       .filter( lineArr=>lineArr.length >= 6 )
       .map( lineArr=> Customer( lineArr(0), lineArr(2), lineArr(3), lineArr(4), lineArr(5) ) )
@@ -123,7 +123,7 @@ object SparkSqlTest {
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._
 
-    val hdfsPath = "hdfs://namenode01.yinker.com:8020/log/spark/sql/demo1/*.txt";
+    val hdfsPath = "hdfs://namenode01.xxxx.com:8020/log/spark/sql/demo1/*.txt";
     val customer = sc.textFile(hdfsPath).map(_.split(","))
       .filter( lineArr=>lineArr.length >= 6 )
       .map( lineArr=> Customer( lineArr(0), lineArr(2), lineArr(3), lineArr(4), lineArr(5) ) )
